@@ -11,6 +11,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _indiceBottonAtual = 0;
+
   @override
   Widget build(BuildContext context) {
     List<Widget> telas = [
@@ -48,7 +49,10 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: telas[_indiceBottonAtual],
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: telas[_indiceBottonAtual],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indiceBottonAtual,
         onTap: (indice) {
