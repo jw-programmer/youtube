@@ -10,8 +10,8 @@ class Api {
         "search"
             "/?part=snippet"
             "&type=video"
-            "&maxResult=20"
-            "&order=date"
+            "&maxResults=20"
+//            "&order=date"
             "&key=" +
         ApiConfig.CHAVE_API_YOUTUBE +
         "&q=$pesquisa");
@@ -22,6 +22,7 @@ class Api {
       }).toList();
       return videos;
     } else {
+      print(response.statusCode);
       return null;
     }
   }
